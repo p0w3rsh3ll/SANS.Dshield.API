@@ -9,7 +9,7 @@ Usage
 -----
 
 View April, 2016
-```
+```powershell
 (Get-SecondTuesday -Year 2016 -Month 04).ToString('yyyy-MM-dd') |
 Get-SansMSPatchDay | Select @{l='Bulletin';e={$_.Id}},title,
  @{l='Components Affected';e={$_.affected}},
@@ -24,7 +24,7 @@ Get-SansMSPatchDay | Select @{l='Bulletin';e={$_.Id}},title,
 ```
 
 How many CVE were addressed in April, 2016
-```
+```powershell
 (Get-SecondTuesday -Year 2016 -Month 04).ToString('yyyy-MM-dd') | 
 
 Get-SansMSPatchDay | Get-SansMSPatchCVE -Verbose | 
@@ -33,7 +33,7 @@ Sort -Unique | Measure
 ```
 
 How many patches were replaced/superseded in April, 2016
-```
+```powershell
 (Get-SecondTuesday -Year 2016 -Month 04).ToString('yyyy-MM-dd') |
 Get-SansMSPatchDay | Get-SansMSPatchReplace | Sort -Unique | Measure
 ```
